@@ -7,6 +7,15 @@
   </div>
 </template>
 
+<style>
+#app {
+  display: block;
+}
+canvas {
+  background: #87CEEB;
+}
+</style>
+
 <script>
 export default {
   name: 'App',
@@ -15,9 +24,23 @@ export default {
   },
   methods: {
     initGame() {
+      console.log('Initializing game...');
       const canvas = this.$refs.gameCanvas;
-      const ctx = canvas.getContext('2d');
+      console.log('Canvas element:', canvas);
       
+      if (!canvas) {
+        console.error('Canvas element not found!');
+        return;
+      }
+      
+      const ctx = canvas.getContext('2d');
+      console.log('Canvas context:', ctx);
+      
+      if (!ctx) {
+        console.error('Could not get 2D context');
+        return;
+      }
+
       // Game state
       const gameState = {
         player: { x: 400, y: 500, width: 50, height: 30, speed: 5 },
@@ -25,6 +48,8 @@ export default {
         enemies: [],
         lastTime: 0
       };
+      
+      console.log('Game state initialized');
       
       // Draw player plane
       function drawPlayer() {
