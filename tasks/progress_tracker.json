@@ -1,9 +1,9 @@
 {
-  "plan_id": "f583dfb8-675a-4d90-8a9a-4ef04d8ad9c2",
-  "project_name": "UserManagementSystem",
-  "total_tasks": 10,
+  "plan_id": "ac429d4f-f6de-42c7-91e4-4349e3353776",
+  "project_name": "SimpleTestProject",
+  "total_tasks": 9,
   "completed_tasks": 0,
   "progress_percentage": 0.0,
   "current_task": "task_001",
-  "updated_at": "2025-06-30T20:38:44.465009"
+  "updated_at": "2025-06-30T20:46:26.298104"
 }

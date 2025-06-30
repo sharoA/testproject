@@ -1,8 +1,8 @@
 {
-  "plan_id": "f583dfb8-675a-4d90-8a9a-4ef04d8ad9c2",
-  "project_name": "UserManagementSystem",
-  "total_tasks": 10,
-  "estimated_total_hours": 16.5,
+  "plan_id": "ac429d4f-f6de-42c7-91e4-4349e3353776",
+  "project_name": "SimpleTestProject",
+  "total_tasks": 9,
+  "estimated_total_hours": 12.5,
   "tasks": [
     {
       "id": "task_001",
@@ -30,8 +30,8 @@
     },
     {
       "id": "task_003",
-      "name": "后端开发 - 功能概述\n开发一个用户管理系统，包含用户注册、登录、个人信息管理等功能",
-      "description": "实现功能概述\n开发一个用户管理系统，包含用户注册、登录、个人信息管理等功能的后端逻辑",
+      "name": "后端开发 - 功能概述\n一个简单的用户系统。\n\n## 技术栈\n- 后端：Java 8 + Spring Boot\n- 前端：Vue 2\n\n## 功能",
+      "description": "实现功能概述\n一个简单的用户系统。\n\n## 技术栈\n- 后端：Java 8 + Spring Boot\n- 前端：Vue 2\n\n## 功能的后端逻辑",
       "type": "backend",
       "priority": 2,
       "estimated_hours": 2.0,
@@ -43,8 +43,8 @@
     },
     {
       "id": "task_004",
-      "name": "后端开发 - 技术栈\n- 后端：Java 8 + Spring Boot 2.7.x + JPA\n- 前端：Vue 2 + Element UI\n- 数据库：MySQL\n\n## 功能",
-      "description": "实现技术栈\n- 后端：Java 8 + Spring Boot 2.7.x + JPA\n- 前端：Vue 2 + Element UI\n- 数据库：MySQL\n\n## 功能的后端逻辑",
+      "name": "后端开发 - 用户模块",
+      "description": "实现用户模块的后端逻辑",
       "type": "backend",
       "priority": 2,
       "estimated_hours": 2.0,
@@ -56,11 +56,11 @@
     },
     {
       "id": "task_005",
-      "name": "后端开发 - 1. 用户模块",
-      "description": "实现1. 用户模块的后端逻辑",
+      "name": "API接口实现",
+      "description": "实现1个REST API接口",
       "type": "backend",
       "priority": 2,
-      "estimated_hours": 2.0,
+      "estimated_hours": 0.5,
       "dependencies": [
         "task_002"
       ],
@@ -69,19 +69,6 @@
     },
     {
       "id": "task_006",
-      "name": "API接口实现",
-      "description": "实现5个REST API接口",
-      "type": "backend",
-      "priority": 2,
-      "estimated_hours": 2.5,
-      "dependencies": [
-        "task_002"
-      ],
-      "status": "pending",
-      "assigned_module": "code_generator"
-    },
-    {
-      "id": "task_007",
       "name": "前端应用开发",
       "description": "创建Vue2前端应用，实现路由和基础组件",
       "type": "frontend",
@@ -94,7 +81,7 @@
       "assigned_module": "code_generator"
     },
     {
-      "id": "task_008",
+      "id": "task_007",
       "name": "后端单元测试",
       "description": "为后端代码编写JUnit单元测试",
       "type": "test",
@@ -103,7 +90,19 @@
       "dependencies": [
         "task_003",
         "task_004",
-        "task_005",
+        "task_005"
+      ],
+      "status": "pending",
+      "assigned_module": "test_generator"
+    },
+    {
+      "id": "task_008",
+      "name": "前端单元测试",
+      "description": "为前端组件编写Jest单元测试",
+      "type": "test",
+      "priority": 4,
+      "estimated_hours": 1.5,
+      "dependencies": [
         "task_006"
       ],
       "status": "pending",
@@ -111,27 +110,14 @@
     },
     {
       "id": "task_009",
-      "name": "前端单元测试",
-      "description": "为前端组件编写Jest单元测试",
-      "type": "test",
-      "priority": 4,
-      "estimated_hours": 1.5,
-      "dependencies": [
-        "task_007"
-      ],
-      "status": "pending",
-      "assigned_module": "test_generator"
-    },
-    {
-      "id": "task_010",
       "name": "代码提交与推送",
       "description": "提交所有代码到Git仓库并推送到远程分支",
       "type": "git",
       "priority": 5,
       "estimated_hours": 0.5,
       "dependencies": [
-        "task_008",
-        "task_009"
+        "task_007",
+        "task_008"
       ],
       "status": "pending",
       "assigned_module": "git_manager"
@@ -155,20 +141,16 @@
       "task_002"
     ],
     "task_007": [
-      "task_002"
-    ],
-    "task_008": [
       "task_003",
       "task_004",
-      "task_005",
+      "task_005"
+    ],
+    "task_008": [
       "task_006"
     ],
     "task_009": [
-      "task_007"
-    ],
-    "task_010": [
-      "task_008",
-      "task_009"
+      "task_007",
+      "task_008"
     ]
   },
   "execution_order": [
@@ -180,10 +162,9 @@
     "task_006",
     "task_007",
     "task_008",
-    "task_009",
-    "task_010"
+    "task_009"
   ],
-  "created_at": "2025-06-30T20:38:44.460029",
-  "branch_name": "D_202506302038_aigc",
+  "created_at": "2025-06-30T20:46:26.296092",
+  "branch_name": "D_202506302046_aigc",
   "project_structure": {}
 }
