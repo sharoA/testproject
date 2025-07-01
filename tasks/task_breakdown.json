@@ -1,0 +1,189 @@
+{
+  "plan_id": "5ab3158e-5df9-493f-a452-e9e122e1a063",
+  "project_name": "需求文档 - 一局对接链数优化V0",
+  "total_tasks": 10,
+  "estimated_total_hours": 16.0,
+  "tasks": [
+    {
+      "id": "task_001",
+      "name": "环境准备与分支管理",
+      "description": "创建项目目录，切换Git分支，初始化项目结构",
+      "type": "setup",
+      "priority": 1,
+      "estimated_hours": 0.5,
+      "dependencies": [],
+      "status": "pending",
+      "assigned_module": "git_manager"
+    },
+    {
+      "id": "task_002",
+      "name": "技术栈文档生成",
+      "description": "生成backend-stack.md、frontend-stack.md等技术栈文档",
+      "type": "docs",
+      "priority": 2,
+      "estimated_hours": 0.5,
+      "dependencies": [
+        "task_001"
+      ],
+      "status": "pending",
+      "assigned_module": "code_generator"
+    },
+    {
+      "id": "task_003",
+      "name": "后端开发 - 📋 业务需求分析\n\n### 功能",
+      "description": "实现📋 业务需求分析\n\n### 功能的后端逻辑",
+      "type": "backend",
+      "priority": 2,
+      "estimated_hours": 2.0,
+      "dependencies": [
+        "task_002"
+      ],
+      "status": "pending",
+      "assigned_module": "code_generator"
+    },
+    {
+      "id": "task_004",
+      "name": "后端开发 - API接口需求\n\n- **确权业务申请** (修改)\n  - 描述: 调整bizSerialNo校验规则\n\n### 用户界面需求\n\n- **额度管理页面** (修改)\n  - 描述: 功能",
+      "description": "实现API接口需求\n\n- **确权业务申请** (修改)\n  - 描述: 调整bizSerialNo校验规则\n\n### 用户界面需求\n\n- **额度管理页面** (修改)\n  - 描述: 功能的后端逻辑",
+      "type": "backend",
+      "priority": 2,
+      "estimated_hours": 2.0,
+      "dependencies": [
+        "task_002"
+      ],
+      "status": "pending",
+      "assigned_module": "code_generator"
+    },
+    {
+      "id": "task_005",
+      "name": "后端开发 - 用户故事\n\n- **作为** 多组织企业管理员\n  **我希望** 查看各组织单元的额度分配明细\n  **以便** 可以更好地进行资金规划和分配\n\n- **作为** 核心企业业务员\n  **我希望** 使用原业务编号重新推送修改后的数据\n  **以便** 保持业务数据的连续性\n\n- **作为** 财务人员\n  **我希望** 快速区分不同类型的额度\n  **以便** 提高工作效率\n\n## 🔌 API接口设计\n\n### RESTful API接口\n\n#### Organization-Units/Quotas 资源\n\n- **GET** `/api/v1/organization-units/quotas` - 获取组织单元额度列表（支持查询、筛选、排序）\n  - 响应:\n    - 200: 成功\n    - 403: 无权限访问（非多组织企业用户）\n\n- **GET** `/api/v1/organization-units/quotas/export` - 导出组织单元额度列表\n  - 响应:\n    - 200: 成功\n    - 403: 无权限访问\n\n#### Business-Applications 资源\n\n- **POST** `/api/v1/business-applications` - 提交确权业务申请（调整bizSerialNo校验规则）\n  - 响应:\n    - 201: 申请提交成功\n    - 400: bizSerialNo已存在且状态有效\n    - 403: 无权限访问\n\n### 数据流程设计\n\n#### 系统组件\n\n- **前端层** (Vue3)\n  - 组织单元额度列表展示\n  - 额度类型切换交互\n  - 导出功能",
+      "description": "实现用户故事\n\n- **作为** 多组织企业管理员\n  **我希望** 查看各组织单元的额度分配明细\n  **以便** 可以更好地进行资金规划和分配\n\n- **作为** 核心企业业务员\n  **我希望** 使用原业务编号重新推送修改后的数据\n  **以便** 保持业务数据的连续性\n\n- **作为** 财务人员\n  **我希望** 快速区分不同类型的额度\n  **以便** 提高工作效率\n\n## 🔌 API接口设计\n\n### RESTful API接口\n\n#### Organization-Units/Quotas 资源\n\n- **GET** `/api/v1/organization-units/quotas` - 获取组织单元额度列表（支持查询、筛选、排序）\n  - 响应:\n    - 200: 成功\n    - 403: 无权限访问（非多组织企业用户）\n\n- **GET** `/api/v1/organization-units/quotas/export` - 导出组织单元额度列表\n  - 响应:\n    - 200: 成功\n    - 403: 无权限访问\n\n#### Business-Applications 资源\n\n- **POST** `/api/v1/business-applications` - 提交确权业务申请（调整bizSerialNo校验规则）\n  - 响应:\n    - 201: 申请提交成功\n    - 400: bizSerialNo已存在且状态有效\n    - 403: 无权限访问\n\n### 数据流程设计\n\n#### 系统组件\n\n- **前端层** (Vue3)\n  - 组织单元额度列表展示\n  - 额度类型切换交互\n  - 导出功能的后端逻辑",
+      "type": "backend",
+      "priority": 2,
+      "estimated_hours": 2.0,
+      "dependencies": [
+        "task_002"
+      ],
+      "status": "pending",
+      "assigned_module": "code_generator"
+    },
+    {
+      "id": "task_006",
+      "name": "后端开发 - # 交互模式\n\n- **Synchronous API**: 组织单元额度列表查询/导出\n- **Asynchronous Validation**: 业务编号重复校验\n- **CQRS**: 额度汇总计算与明细查询\n\n### 🏗️ 系统架构设计\n\n#### 前端架构\n\n- **框架**: Vue3\n- **架构模式**: 组件化架构 + 微前端(可选)\n\n##### UI组件\n\n- **MainLayout** (未知类型)\n\n- **QuotaDataTable** (未知类型)\n\n- **OrgUnitQuotaTable** (未知类型)\n\n- **QuotaTypeFilter** (未知类型)\n\n- **PermissionGuard** (未知类型)\n\n#### 后端架构\n\n- **框架**: Spring Boot\n- **架构模式**: 分层架构 + CQRS模式\n\n##### 微服务",
+      "description": "实现# 交互模式\n\n- **Synchronous API**: 组织单元额度列表查询/导出\n- **Asynchronous Validation**: 业务编号重复校验\n- **CQRS**: 额度汇总计算与明细查询\n\n### 🏗️ 系统架构设计\n\n#### 前端架构\n\n- **框架**: Vue3\n- **架构模式**: 组件化架构 + 微前端(可选)\n\n##### UI组件\n\n- **MainLayout** (未知类型)\n\n- **QuotaDataTable** (未知类型)\n\n- **OrgUnitQuotaTable** (未知类型)\n\n- **QuotaTypeFilter** (未知类型)\n\n- **PermissionGuard** (未知类型)\n\n#### 后端架构\n\n- **框架**: Spring Boot\n- **架构模式**: 分层架构 + CQRS模式\n\n##### 微服务的后端逻辑",
+      "type": "backend",
+      "priority": 2,
+      "estimated_hours": 2.0,
+      "dependencies": [
+        "task_002"
+      ],
+      "status": "pending",
+      "assigned_module": "code_generator"
+    },
+    {
+      "id": "task_007",
+      "name": "前端应用开发",
+      "description": "创建Vue2前端应用，实现路由和基础组件",
+      "type": "frontend",
+      "priority": 3,
+      "estimated_hours": 3.0,
+      "dependencies": [
+        "task_002"
+      ],
+      "status": "pending",
+      "assigned_module": "code_generator"
+    },
+    {
+      "id": "task_008",
+      "name": "后端单元测试",
+      "description": "为后端代码编写JUnit单元测试",
+      "type": "test",
+      "priority": 4,
+      "estimated_hours": 2.0,
+      "dependencies": [
+        "task_003",
+        "task_004",
+        "task_005",
+        "task_006"
+      ],
+      "status": "pending",
+      "assigned_module": "test_generator"
+    },
+    {
+      "id": "task_009",
+      "name": "前端单元测试",
+      "description": "为前端组件编写Jest单元测试",
+      "type": "test",
+      "priority": 4,
+      "estimated_hours": 1.5,
+      "dependencies": [
+        "task_007"
+      ],
+      "status": "pending",
+      "assigned_module": "test_generator"
+    },
+    {
+      "id": "task_010",
+      "name": "代码提交与推送",
+      "description": "提交所有代码到Git仓库并推送到远程分支",
+      "type": "git",
+      "priority": 5,
+      "estimated_hours": 0.5,
+      "dependencies": [
+        "task_008",
+        "task_009"
+      ],
+      "status": "pending",
+      "assigned_module": "git_manager"
+    }
+  ],
+  "dependencies_graph": {
+    "task_001": [],
+    "task_002": [
+      "task_001"
+    ],
+    "task_003": [
+      "task_002"
+    ],
+    "task_004": [
+      "task_002"
+    ],
+    "task_005": [
+      "task_002"
+    ],
+    "task_006": [
+      "task_002"
+    ],
+    "task_007": [
+      "task_002"
+    ],
+    "task_008": [
+      "task_003",
+      "task_004",
+      "task_005",
+      "task_006"
+    ],
+    "task_009": [
+      "task_007"
+    ],
+    "task_010": [
+      "task_008",
+      "task_009"
+    ]
+  },
+  "execution_order": [
+    "task_001",
+    "task_002",
+    "task_003",
+    "task_004",
+    "task_005",
+    "task_006",
+    "task_007",
+    "task_008",
+    "task_009",
+    "task_010"
+  ],
+  "created_at": "2025-07-01T09:28:13.658127",
+  "branch_name": "D_202507010928_aigc",
+  "project_structure": {}
+}
